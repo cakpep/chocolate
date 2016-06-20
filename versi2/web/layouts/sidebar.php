@@ -16,6 +16,6 @@ if (!$menu_kategori_barang) {
     <a href="index.php" class="list-group-item"><span class="glyphicon glyphicon-home"></span> Beranda</a>
     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-shopping-cart"></span> Kategori Produk </a>
     <?php while ($row = mysql_fetch_assoc($menu_kategori_barang)) { ?>
-        <a href="index.php?kategori=<?= $row['idkategori']; ?>" class="list-group-item"><?= $row['nama']; ?></a>
+        <a href="index.php?page=produk&kategori=<?= $row['idkategori']; ?>" class="list-group-item"><?= $row['nama']; ?></a>
     <?php } ?>
 </div>
