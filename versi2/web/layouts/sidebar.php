@@ -6,12 +6,15 @@ if (!$menu_kategori_barang) {
 }
 ?>
 <p class="lead">Chocholate Butique</p>
-<div class="list-group">
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Menu Admin </a>
-    <a href="index.php?page=input-kategori" class="list-group-item">Input Kategori </a>
-    <a href="index.php?page=input-produk" class="list-group-item">Input Produk</a>
-    <a href="#" class="list-group-item">Sms</a>
-</div>
+<?php if(isset($_SESSION['level']) && $_SESSION['level']==1) { ?>
+  <div class="list-group">
+      <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Menu Admin </a>
+      <a href="index.php?page=input-user" class="list-group-item">Daftar User</a>
+      <a href="index.php?page=input-kategori" class="list-group-item">Input Kategori </a>
+      <a href="index.php?page=input-produk" class="list-group-item">Input Produk</a>
+      <a href="#" class="list-group-item">Sms</a>
+  </div>
+<?php } ?>
 <div class="list-group">
     <a href="index.php" class="list-group-item"><span class="glyphicon glyphicon-home"></span> Beranda</a>
     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-shopping-cart"></span> Kategori Produk </a>

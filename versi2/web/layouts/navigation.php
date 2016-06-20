@@ -22,9 +22,18 @@
                 <li>
                     <a href="index.php?page=sms"><span class="glyphicon glyphicon-envelope"></span> My Sms</a>
                 </li>
-                <li>
-                    <a href="index.php?page=login"><span class="glyphicon glyphicon-log-out"></span> Login</a>
-                </li>
+                <?php if(isset($_SESSION['username'])){ ?>
+                  <li>
+                      <a href="index.php?page=logout"><span class="glyphicon glyphicon-log-out"></span> Logout ( <?= $_SESSION['username'] ?> )</a>
+                  </li>
+                <?php } else { ?>
+                  <li>
+                      <a href="index.php?page=login"><span class="glyphicon glyphicon-log-out"></span> Login</a>
+                  </li>
+                  <li>
+                      <a href="index.php?page=daftar"><span class="glyphicon glyphicon-log-out"></span> Daftar</a>
+                  </li>
+                <?php } ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

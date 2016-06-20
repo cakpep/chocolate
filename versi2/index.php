@@ -52,6 +52,9 @@
                                     case 'input-produk':
                                         include "web/admin/input-produk.php";
                                         break;
+                                    case 'input-user':
+                                        include "web/admin/input-user.php";
+                                        break;
                                     case 'sms':
                                         include "web/admin/sms.php";
                                         break;
@@ -63,6 +66,12 @@
                                         break;
                                     case 'login':
                                         include "web/content/login.php";
+                                        break;
+                                    case 'logout':
+                                        include "web/content/logout.php";
+                                        break;
+                                    case 'daftar':
+                                        include "web/content/daftar.php";
                                         break;
                                     default:
                                         include "web/content/produk.php";
