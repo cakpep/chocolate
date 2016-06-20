@@ -16,6 +16,10 @@ if (!$menu_kategori_barang) {
     <a href="index.php" class="list-group-item"><span class="glyphicon glyphicon-home"></span> Beranda</a>
     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-shopping-cart"></span> Kategori Produk </a>
     <?php while ($row = mysql_fetch_assoc($menu_kategori_barang)) { ?>
-        <a href="index.php?page=produk&kategori=<?= $row['idkategori']; ?>" class="list-group-item"><?= $row['nama']; ?></a>
+        <?php
+          $q = "select count(idbarang) as jumlah from barang where id_kategori=".$row['idkategori'];
+          $count = mysql_fetch_array(mysql_query($q));
+        ?>
+        <a href="index.php?page=produk&kategori=<?= $row['idkategori']; ?>" class="list-group-item"><?= $row['nama']; ?><span class="label label-info pull-right"><?= $count['jumlah']; ?></span></a>
     <?php } ?>
 </div>
