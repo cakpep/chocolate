@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Shop Homepage - Start Bootstrap Template</title>
+        <title>Chocolate Butique</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 
     </head>
 
-    <body>        
+    <body>
         <?php include "config/koneksi.php"; ?>
         <!-- Navigation -->
         <?php include "web/layouts/navigation.php"; ?>
@@ -40,11 +40,11 @@
                     <?php include "web/layouts/sidebar.php"; ?>
                 </div>
 
-                <div class="col-md-9">                    
+                <div class="col-md-9">
 
                     <div class="row">
-                        <?php 
-                                $page = isset($_GET['page']) ? $_GET['page'] : NULL;                                
+                        <?php
+                                $page = isset($_GET['page']) ? $_GET['page'] : NULL;
                                 switch ($page) {
                                     case 'input-kategori':
                                         include "web/admin/input-kategori.php";
@@ -55,10 +55,19 @@
                                     case 'sms':
                                         include "web/admin/sms.php";
                                         break;
+                                    case 'produk':
+                                        include "web/content/produk.php";
+                                        break;
+                                    case 'contact':
+                                        include "web/content/contact.php";
+                                        break;
+                                    case 'login':
+                                        include "web/content/login.php";
+                                        break;
                                     default:
                                         include "web/content/produk.php";
                                         break;
-                                }                            
+                                }
                         ?>
                     </div>
 

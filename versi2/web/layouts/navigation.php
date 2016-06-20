@@ -8,22 +8,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Home</a>
+            <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Chocolate</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">Produk</a>
+                    <a href="index.php?page=produk"><span class="glyphicon glyphicon-shopping-cart"></span> Produk</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="index.php?page=contact"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
                 </li>
                 <li>
-                    <a href="#">My Sms</a>
+                    <a href="index.php?page=sms"><span class="glyphicon glyphicon-envelope"></span> My Sms</a>
                 </li>
                 <li>
-                    <a href="#">Login</a>
+                    <a href="index.php?page=login"><span class="glyphicon glyphicon-log-out"></span> Login</a>
                 </li>
             </ul>
         </div>

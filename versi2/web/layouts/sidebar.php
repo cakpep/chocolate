@@ -7,14 +7,15 @@ if (!$menu_kategori_barang) {
 ?>
 <p class="lead">Chocholate Butique</p>
 <div class="list-group">
-    <a href="#" class="list-group-item">Menu Admin </a>
+    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Menu Admin </a>
     <a href="index.php?page=input-kategori" class="list-group-item">Input Kategori </a>
     <a href="index.php?page=input-produk" class="list-group-item">Input Produk</a>
-    <a href="#" class="list-group-item">Sms</a>                    
+    <a href="#" class="list-group-item">Sms</a>
 </div>
 <div class="list-group">
-    <a href="#" class="list-group-item">Kategori Produk </a>
+    <a href="index.php" class="list-group-item"><span class="glyphicon glyphicon-home"></span> Beranda</a>
+    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-shopping-cart"></span> Kategori Produk </a>
     <?php while ($row = mysql_fetch_assoc($menu_kategori_barang)) { ?>
-        <a href="index.php?kategori=<?= $row['idkategori']; ?>" class="list-group-item"><?= $row['nama']; ?></a>                    
-    <?php } ?>        
+        <a href="index.php?kategori=<?= $row['idkategori']; ?>" class="list-group-item"><?= $row['nama']; ?></a>
+    <?php } ?>
 </div>
