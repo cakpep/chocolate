@@ -42,6 +42,7 @@
 					id_kategori  int null,
 					nama varchar(40) null,
 					harga int null default 0,
+					keterangan text null,
 					foto varchar(70) null default '',
 					KEY(nama))";
 

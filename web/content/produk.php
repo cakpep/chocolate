@@ -41,11 +41,11 @@ while ($row = mysql_fetch_assoc($hasil)) {
         <div class="thumbnail">
             <img src="uploads/produk/<?= $row['foto']; ?>" alt="" style="width:320px; height:150px;">
             <div class="caption">
-                <h4 class="pull-right"><?= $row['harga'] ?></h4>
+                <h4 class="pull-right">Rp <?= $row['harga'] ?></h4>
                 <h4><a href="#"><?= $row['nama'] ?></a></h4>
-                <p>Teks deskripsi barang</p>
+                <p><?= $row['keterangan'] ?></p>
             </div>
-            <div class="ratings">
+            <!-- <div class="ratings">
                 <p class="pull-right"><a href="index.php">Beli Produk Ini</a></p>
                 <p>
                     <span class="glyphicon glyphicon-star"></span>
@@ -54,7 +54,7 @@ while ($row = mysql_fetch_assoc($hasil)) {
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                 </p>
-            </div>            
+            </div> -->
         </div>
     </div>
 <?php } ?>
