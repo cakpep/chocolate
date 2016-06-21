@@ -1,41 +1,108 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Chocolate</title>
+<html lang="en">
 
-<link rel='stylesheet' type='text/css' href='style.css'/>
-</head>
-<body>
-<table border='1px' align='center' width='925px'>
-<tr><td colspan='2' height='150px' bgcolor='grey'>
-<div style="border: 5px black ridge; padding: 70px; box-shadow: 0 0 5px red;background-image:url(header.png);"><br/>
-<font face="britannic bold"></font>
-</td></tr>
+    <head>
 
-<h3><tr><td colspan='2' height='25px' >
-<div class='menu'>
-<a href='home.php' title='home'>Home</a>
-<a href='contact.php' title='contact'>Contact</a>
-<a href='login.php' title='home'>Login</a></div></td></tr><h3>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-<tr><td width='120px' height='500px' valign='top' bgcolor='maroon'>
-<div class='menu'>
-<h3>
-<a href="gamis.php">Gamis</a><br>
-<a href="koko.php">Baju Koko</a>
-<a href="jilbab.php">Jilbab</a>
-<a href="dress.php">Dress</a>
-</h3>
-</div>
+        <title>Chocolate Butique</title>
 
-</td><td width='500px' valign='top' bgcolor="grey">
-<div class='isi'>
-<h3><ol>
-</ol></h3>
-</div></td></tr>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<tr align='center'><td colspan='2' height='30px' bgcolor='maroon'>
-<div class='footer'>&copy; All Right Reserved</div></td></tr>
-</table>
-</body>
+        <!-- Custom CSS -->
+        <link href="css/shop-homepage.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <?php include "config/koneksi.php"; ?>
+        <!-- Navigation -->
+        <?php include "web/layouts/navigation.php"; ?>
+
+        <!-- Page Content -->
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <?php include "web/layouts/sidebar.php"; ?>
+                </div>
+
+                <div class="col-md-9">
+
+                    <div class="row">
+                        <?php
+                                $page = isset($_GET['page']) ? $_GET['page'] : NULL;
+                                switch ($page) {
+                                    case 'input-kategori':
+                                        include "web/admin/input-kategori.php";
+                                        break;
+                                    case 'input-produk':
+                                        include "web/admin/input-produk.php";
+                                        break;
+                                    case 'input-user':
+                                        include "web/admin/input-user.php";
+                                        break;
+                                    case 'sms':
+                                        include "web/admin/sms.php";
+                                        break;
+                                    case 'produk':
+                                        include "web/content/produk.php";
+                                        break;
+                                    case 'contact':
+                                        include "web/content/contact.php";
+                                        break;
+                                    case 'login':
+                                        include "web/content/login.php";
+                                        break;
+                                    case 'logout':
+                                        include "web/content/logout.php";
+                                        break;
+                                    case 'daftar':
+                                        include "web/content/daftar.php";
+                                        break;
+                                    default:
+                                        include "web/content/produk.php";
+                                        break;
+                                }
+                        ?>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+        <div class="container">
+
+            <hr>
+
+            <!-- Footer -->
+            <?php include "web/layouts/footer.php"; ?>
+
+        </div>
+        <!-- /.container -->
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
+
 </html>
