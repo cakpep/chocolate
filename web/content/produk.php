@@ -3,7 +3,7 @@ $nama_barang = "";
 if (isset($_POST["nama_barang"])) {
   $nama_barang = $_POST["nama_barang"];
   $sql = "select * from barang where nama like '%" . $nama_barang . "%' order by idbarang desc ";
-} elseif ($_GET["kategori"]) {
+} elseif (isset($_GET["kategori"])) {
   $sql = "select * from barang where id_kategori=".$_GET['kategori']." order by idbarang desc ";
 } else {
   $sql = "select * from barang order by idbarang desc ";
