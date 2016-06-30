@@ -36,6 +36,11 @@
 									id_level int auto_increment not null primary key,
 									nama varchar(40) null,
 									keterangan text null)";
+//insert default level
+$insertLevel2 = "INSERT INTO user_level (id_level, nama, keterangan) VALUES (1, 'admin', Administrator web);";
+$insertLevel1 = "INSERT INTO user_level (id_level, nama, keterangan) VALUES (2, 'user', User web);";
+//insert default admin user
+$createUser = "INSERT INTO user (iduser, id_user_level, username, password, nama, jenkel, email, notelp, ttl, alamat, status) VALUES (1, 1, 'admin', 'admin123', 'Administrator Chocolate', '', 'admin@chocolate.com', '88888', '', Yogyakarta Yogyakarta, 1);";
 
 	$sqlTabelBarang = "create table if not exists barang (
 					idbarang int auto_increment not null primary key,
@@ -63,6 +68,9 @@
 
   mysql_query ($sqlTabelUser) or die ("Gagal Buat Tabel User");
 	mysql_query ($sqlTabelUserLevel) or die ("Gagal Buat Tabel Level");
+	mysql_query ($insertLevel1) or die ("Gagal Insert Level 1");
+	mysql_query ($insertLevel2) or die ("Gagal Insert Level 2");
+	mysql_query ($createUser) or die ("Gagal Insert User");
 	mysql_query ($sqlTabelBarang) or die ("Gagal Buat Tabel Barang");
 	mysql_query ($sqlTabelHjual) or die ("Gagal Buat Tabel Header Jual");
 	mysql_query ($sqlTabelDjual) or die ("Gagal Buat Tabel Detail Jual");
